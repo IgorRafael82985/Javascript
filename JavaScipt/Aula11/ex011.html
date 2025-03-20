@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de migração</title>
+</head>
+<body>
+    <h1>Controle de migração</h1>
+    <p> seu nome:    <input type="text" name="nome" id="nome"></p>
+    <p>Sua idade:     <input type="number" name="idade" id="idade"></p>
+     Insira seu país: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"
+    ></div>
+    <script>
+        function verificar() {
+            var anos = window.document.getElementById('idade')
+            var idade = Number(anos.value)
+            var nome = window.document.getElementById('nome')
+            var txtpais = window.document.getElementById('pais')
+            var res = window.document.querySelector('div#res')
+            res.innerHTML += `<p><strong>${nome.value}</strong> Você é do pais <strong>${txtpais.value}</strong><P>`
+            res.innerHTML += `e sua idade é ${anos.value} anos`
+            if (txtpais.value == 'Brasil') {
+                res.innerHTML += '<p>Você é <strong>Brasileiro</strong></p>'
+            } else {
+                res.innerHTML += '<p>Você é estrangeiro</p>'
+            }
+        }
+    </script>
+</body>
+</html>
